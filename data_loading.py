@@ -1,13 +1,16 @@
 import json
-import tiktoken # for token counting
-import numpy as np
 from collections import defaultdict
 
 data_path = "test_data.jsonl"
 
 # Load the dataset
-with open(data_path, 'r', encoding='utf-8') as f:
-    dataset = [json.loads(line) for line in f]
+try:
+    with open(data_path, 'r', encoding='utf-8') as f:
+        dataset = [json.loads(line) for line in f]
+except (FileNotFoundError, PermissionError) as e:
+    print(f"Error opening file: {e}")
+except json.JSONDecodeError as e:
+    print(f"Error parsing JSON: {e}")
 
 # Initial dataset stats
 print("Num examples:", len(dataset))
