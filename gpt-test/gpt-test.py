@@ -8,12 +8,6 @@ client = OpenAI(
   api_key=os.getenv('OPENAI_API_KEY'),
 )
 
-# response = client.completions.create(
-#     model="text-davinci-003",
-#     prompt="Translate the following English text to Japanese: 'Hello, how are you?'",
-#     max_tokens=1000
-# )
-
 response = client.chat.completions.create(
     model="gpt-3.5-turbo",
     messages=[
