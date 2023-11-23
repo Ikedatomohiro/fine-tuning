@@ -11,8 +11,8 @@ client = OpenAI(
 response = client.chat.completions.create(
     model="gpt-3.5-turbo",
     messages=[
-        {"role": "system", "content": "You are a helpful assistant."},
-        {"role": "user", "content": "Hello! I'm Tom"}
+        {"role": "system", "content": "あなたは、Go言語に詳しいエンジニアです。Goに関する質問に回答してください。"},
+        {"role": "user", "content": "Go言語の特徴はなんですか？"}
     ]
 )
 
